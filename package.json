@@ -1,0 +1,19 @@
+{
+  "name": "gos",
+  "version": "1.0.0",
+  "description": "Greeks on stage app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antogeorgiadis/gos.git"
+  },
+  "author": "Tony & PJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antogeorgiadis/gos/issues"
+  },
+  "homepage": "https://github.com/antogeorgiadis/gos#readme"
+}
