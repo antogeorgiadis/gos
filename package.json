@@ -4,7 +4,10 @@
   "description": "Greeks on stage app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test:unit": "mocha ./test/unit/**/*",
+    "dev": "node index.js",
+    "cy:run": "cypress run",
+    "test:acceptance": "yarn dev & wait-on http://localhost:3000 && yarn cy:run ; killall node"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,16 @@
   "bugs": {
     "url": "https://github.com/antogeorgiadis/gos/issues"
   },
-  "homepage": "https://github.com/antogeorgiadis/gos#readme"
+  "homepage": "https://github.com/antogeorgiadis/gos#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "cypress": "3.4.1",
+    "mocha": "^6.2.2",
+    "sinon": "^7.5.0",
+    "supertest": "^4.0.2",
+    "wait-on": "3.3.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
