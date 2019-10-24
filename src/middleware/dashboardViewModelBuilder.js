@@ -1,7 +1,9 @@
 const createDashboardViewModelBuilder = ({ membersClient }) => {
   return (req, res, next) => {
-    req.members = membersClient.fetch()
-    next()
+    membersClient.fetch('http://localhost:3000').then(res => {
+      req.members = res
+      next()
+    })
   }
 }
 

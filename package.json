@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:unit": "mocha ./test/unit/**/*",
-    "dev": "node index.js",
+    "dev": "node app.js",
     "cy:run": "cypress run",
     "test:acceptance": "yarn dev & wait-on http://localhost:3000 && yarn cy:run ; killall node"
   },
@@ -23,11 +23,13 @@
     "chai": "^4.2.0",
     "cypress": "3.4.1",
     "mocha": "^6.2.2",
+    "nock": "^11.6.0",
     "sinon": "^7.5.0",
     "supertest": "^4.0.2",
     "wait-on": "3.3.0"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "express": "^4.17.1"
   }
 }

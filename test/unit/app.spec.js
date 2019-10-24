@@ -9,7 +9,10 @@ describe('Server', () => {
       const renderDashboard = (req, res, next) => {
         res.sendStatus(200)
       }
-      const server = require('../../server')({ dashboardMiddleware, renderDashboard })
+      const membersRepoMiddleware = (req, res, next) => {
+        res.sendStatus(200)
+      }
+      const server = require('../../server')({ dashboardMiddleware, renderDashboard, membersRepoMiddleware })
 
       request(server)
       .get('/dashboard')
