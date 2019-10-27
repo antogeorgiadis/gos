@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <title>GOS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="flow-wrapper--column">
+<h2>Dashboard</h2>
+<ul style="list-style: none">
+    {{#members}}
+        <li>Name: {{name}} | Email address: {{email}} | Phone: {{phone}}</li>
+    {{/members}}
+</ul>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyCLe_IYjlZdkUZCYBU1IsV0uxChPdcJwjE",
+        authDomain: "greeks-on-stage.firebaseapp.com",
+        databaseURL: "https://greeks-on-stage.firebaseio.com",
+        projectId: "greeks-on-stage",
+        storageBucket: "greeks-on-stage.appspot.com",
+        messagingSenderId: "1078278852119",
+        appId: "1:1078278852119:web:e70f593e47d842eb265652",
+        measurementId: "G-BLCPGXHYHW"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+</body>
+</html>
