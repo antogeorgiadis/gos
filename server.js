@@ -1,7 +1,19 @@
 const express = require('express')
 const path = require('path')
 const bodyParser = require('body-parser');
-const firebase = require("firebase")
+const firebase = require('firebase')
+// const ReactDOMServer = require('react-dom-server')
+// const React = require('react')
+
+// const Hello = (props) => (
+//   <React.Fragment>
+//     <h1>Hello, {props.name}!</h1>
+//   </React.Fragment>
+// )
+// module.exports =
+// {
+//   Hello: Hello
+// }
 
 module.exports = function({
   dashboardMiddleware,
@@ -43,5 +55,25 @@ module.exports = function({
   })
   app.get('/dashboard', dashboardMiddleware, renderDashboard)
   app.get('/get-members', membersRepoMiddleware)
+  app.get('/ssr', (req, res) => {
+    const name = 'Marvelous Wololo'
+
+    // const component = ReactDOMServer.renderToString(<Hello name={name} />)
+
+    const html = `
+  <!doctype html>
+    <html>
+    <head>
+      <script>window.__INITIAL__DATA__ = ${JSON.stringify({ name })}</script>
+    </head>
+    <body>
+    <!--<div id="root">${component}</div>-->
+    <!--<script src="/public/home.js"></script>-->
+  </body>
+  </html>`
+
+    res.send(html)
+  })
+
   return app
 }
