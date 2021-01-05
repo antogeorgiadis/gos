@@ -34,7 +34,7 @@
     "wait-on": "3.3.0"
   },
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "babel-cli": "6",
     "babel-loader": "^8.0.6",
     "babel-preset-react": "^6.24.1",
